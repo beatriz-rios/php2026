@@ -1,9 +1,125 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastro</title>
+
+</head>
+
 <body>
-    <?php include 'cadastr.html'; ?>
-</body>
-</html>
+  <h1>Cadastro</h1>
+  <fieldset>
+    <form method="post">
+
+
+
+    <div>
+      <div>
+        <label for="nome">Nome:</label>
+        <input type="text" name="nome" placeholder="Digite seu nome">
+      </div>
+
+      <br>
+
+      <div>
+        <label for="sobren">Sobrenome:</label>
+        <input type="text" name="sobrenome" placeholder="Digite seu sobrenome">
+      </div>
+
+      <br>
+
+      <div>
+        <label for="phone">Celular:</label>
+        <input type="text" name="phone" placeholder="Digite seu número celular">
+      </div>
+
+<br>
+
+      <div>
+        <label for="rgs">RG:</label>
+        <input type="text" name="rg" placeholder="Digite seu RG">
+      </div>
+
+<br>
+
+      <div>
+        <label for="cpfs">CPF:</label>
+        <input type="text" name="cpf" placeholder="Digite seu cpf">
+      </div>
+
+<br>
+
+
+<div>
+  <label for="nacional">Naciolidade:</label>
+  <input type="text" name="nacionalidade" placeholder="Digite sua nacionalidade">
+</div>
+
+<br>
+
+<div>
+  <label for="nacional">Estado Civil:</label>
+  <input type="text" name="civil" placeholder="Digite seu estado civil">
+</div>
+
+<br>
+
+<div>
+  <label for="pai">Nome do Pai:</label>
+  <input type="text" name="nomePai" placeholder="Nome do Pai">
+</div>
+<br>
+
+<div>
+  <label for="mae">Nome da Mãe:</label>
+  <input type="text" name="nomeMae" placeholder="Nome da Mãe">
+</div>
+
+<br>
+
+<div>
+  <label for="nasci">Data de Nascimento:</label>
+  <input type="date" name="nasceu" placeholder="Selecione sua Data de Nascimento">
+</div>
+
+<br>
+
+<div>
+  <label for="anos">Digite sua Idade:</label>
+  <input type="number" name="idade" placeholder="Digite sua idade">
+</div>
+
+<br>
+
+<div>
+  <label for="rua">Digite seu Endereço:</label>
+  <input type="text" name="ruas" placeholder="Digite seu Endereço">
+</div>
+
+<br>
+
+<div>
+  <label for="bairros">Digite o nome do seu Bairro:</label>
+  <input type="text" name="bairro" placeholder="Digite seu Endereço">
+</div>
+
+<br>
+
+<div>
+  <label for="cidades">Digite o nome da sua Cidade:</label>
+  <input type="text" name="cidade" placeholder="Digite sua Cidade">
+</div>
+
+<br>
+
+<input type="submit" value="Enviar">
+    </div>
+
+</form>
+
+  </fieldset>
 
 
   <?php
@@ -84,4 +200,5 @@ if(mysqli_query($conn, $sql)){
 }
 
   ?>
-
+</body>
+</html>

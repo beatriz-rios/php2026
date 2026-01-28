@@ -3,82 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exclusão</title>
-    <link rel="stylesheet" href="./css/style.css">
+    <title>Excluir</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Exclusão</h1>
-     <nav>
-    <ul>
-        <li><a href="http://localhost/aula_PHP/desafioRaynner/menu.php">Menu</a></li>
-        <li><a href="http://localhost/aula_PHP/desafioRaynner/inclusao.php">Inclusão</a></li>
-        <li><a href="http://localhost/aula_PHP/desafioRaynner/login.php">Login</a></li>
-        <li><a href="http://localhost/aula_PHP/desafioRaynner/alteracao.php">Alteração</a></li>
-        <li><a href="http://localhost/aula_PHP/desafioRaynner/consulta.php">Consulta</a></li>
+<h1>Exclusão de Cadastro</h1>
+ <nav>
+        <ul>
+            <li><a href="cadastro.php">Cadastro</a></li>
+            <li><a href="alteracao.php">Alterar</a></li>
+            <li><a href="consulta.php">Consultar</a></li>
+            <li><a href="exclusao.php">Excluir</a></li>
+        </ul>
+    </nav>
 
-    </ul>
-</nav>
-
-  <form method="post">
-    Digite o número do ID da movimentação que deseja excluir:
-    <br><br>
-    <input type="number" name="id" placeholder="ID da movimentação" required>
-    <br><br>
-    <input type="submit" value="Excluir">
-  </form>
-
-  <?php 
-  if ($_SERVER["REQUEST_METHOD"] == "POST") {
-      $idcli= $_POST["idcli"];
-
-    $servername = "localhost";
-$database = "cadastro";
-$username = "root";
-$password = "";
-$port = 3308;
-
-
-
-$conn = mysqli_connect($servername, $username, $password, $database,$port);
-
-      if (!$conn) {
-          echo "<div class='message error'>Falha na conexão: " . mysqli_connect_error() . "</div>";
-          exit;
-      }
-
-      echo "<div class='message'>Conectado com sucesso.</div>";
-
-$sql_select_user = "SELECT nome FROM cadastro WHERE idcadastro = '$id'";
-$resultado = mysqli_query($conn, $sql_select_user);
-$linha = mysqli_fetch_assoc($resultado);
-
-if ($linha) {
-    $nome_banco_excluir = $linha['nome'];
     
-    // 2. Excluir o usuário do banco de dados (DROP USER)
-    $sql_drop = "DROP USER IF EXISTS '{$nome_banco_excluir}'@'localhost'";
     
-    if (mysqli_query($conn, $sql_drop)) {
-        echo "<div class='message success'>Usuário do banco **'{$nome_banco_excluir}'** excluído com sucesso.</div>";
-    } else {
-        echo "<div class='message error'>Erro ao excluir usuário do banco: " . mysqli_error($conn) . "</div>";
+    <form method="post">
+        <label>Selecione o nome do Cadastro:</label>
+        <select name="id">
+            <option value="">Selecione um Nome</option>
+             <?php
+        include "conectar.php";
+        
+        if (isset($conn)) {
+                $sqlUsuarios = "SELECT idcadastro, nome FROM cadastro ORDER BY nome";
+                $resU = $conn->query($sqlUsuarios);
+                if ($resU) {
+                    while ($u = $resU->fetch_assoc()) {
+                        $id = $u['idcadastro'];
+                        $nome = htmlspecialchars($u['nome']);
+                        echo "<option value='$id'>$nome</option>";
+                    }
+                }
+            }
+        ?>
+        </select>
+
+        <input type="submit" value="Excluir">
+    </form>
+
+    <?php
+    if($_SERVER["REQUEST_METHOD"] == "POST"){
+        $id = $_POST['id'];
+
+        include "conectar.php";
+
+        if (!$conn) {
+            echo "mensagem erro" . mysqli_connect_error();
+            die();
+        }
+
+        $sql = "DELETE FROM cadastro WHERE idcadastro = '$id' ";
+
+        if (mysqli_query($conn, $sql)) {
+            echo "Cadastrado excluido com sucesso";
+        } else {
+            echo "erro" . $sql . "<br>" . mysqli_error($conn);
+        }
+
+
+        mysqli_close($conn);
     }
-
-} else {
-    echo "<div class='message error'>Usuário não encontrado na aplicação.</div>";
-}
-
-
-      $sql = "DELETE FROM usuario WHERE idusuario = '$idcli'";
-
-      if (mysqli_query($conn, $sql)) {
-          echo "<div class='message success'>Comando executado com sucesso.</div>";
-      } else {
-          echo "<div class='message error'>Erro: " . mysqli_error($conn) . "</div>";
-      }
-
-      mysqli_close($conn);
-  }
-  ?>
+    ?>
 </body>
 </html>

@@ -10,6 +10,19 @@
 
 <body>
   <h1>Cadastro</h1>
+
+
+<body>
+
+ <nav>
+        <ul>
+            <li><a href="cadastro.php">Cadastro</a></li>
+            <li><a href="alteracao.php">Alterar</a></li>
+            <li><a href="consulta.php">Consultar</a></li>
+            <li><a href="exclusao.php">Excluir</a></li>
+        </ul>
+    </nav>
+
   <fieldset>
     <form method="post">
 

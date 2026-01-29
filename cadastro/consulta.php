@@ -48,7 +48,6 @@
         echo '<th>Endereço</th>';
         echo '<th>Data de Nascimento</th>';
         echo '<th>Idade</th>';
-        echo '<th>Endereço</th>';
         echo '<th>Bairro</th>';
         echo '<th>Cidade</th>';
         echo '</tr>';
@@ -68,9 +67,9 @@
             echo '<td>' . htmlspecialchars($linha['estado_civil']) . '</td>';
             echo '<td>' . htmlspecialchars($linha['paternidade']) . '</td>';
             echo '<td>' . htmlspecialchars($linha['maternidade']) . '</td>';
+            echo '<td>' . htmlspecialchars($linha['endereco']) . '</td>';
             echo '<td>' . htmlspecialchars($linha['dataNascimento']) . '</td>';
             echo '<td>' . htmlspecialchars($linha['idade']) . '</td>';
-            echo '<td>' . htmlspecialchars($linha['endereco']) . '</td>';
             echo '<td>' . htmlspecialchars($linha['bairro']) . '</td>';
             echo '<td>' . htmlspecialchars($linha['cidade']) . '</td>';
             echo '</tr>';

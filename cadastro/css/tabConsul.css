@@ -1,0 +1,118 @@
+/* Variáveis de Cores (Paleta Verde) */
+:root {
+    --branco: #ffffff;
+    --verde-claro: #e8f5e9;
+    --verde-medio: #4caf50;
+    --verde-escuro: #1b5e20;
+    --sombra: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--verde-claro);
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: var(--verde-escuro);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin: 20px 0;
+    font-size: 1.8rem;
+}
+
+/* Navegação Estilizada */
+nav {
+    background-color: var(--verde-escuro);
+    width: 100%;
+    max-width: 900px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    box-shadow: var(--sombra);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px;
+    margin: 0;
+}
+
+nav ul li a {
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #a5d6a7;
+}
+
+/* Container para permitir rolagem horizontal em telas pequenas */
+.table-container {
+    width: 100%;
+    max-width: 1200px;
+    overflow-x: auto; /* Crucial para tabelas grandes */
+    background: var(--branco);
+    border-radius: 12px;
+    box-shadow: var(--sombra);
+}
+
+/* Estilização da Tabela */
+#tabela {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 1000px; /* Garante que os dados não fiquem espremidos */
+}
+
+#tabela thead {
+    background-color: var(--verde-escuro);
+}
+
+#tabela th {
+    color: var(--branco);
+    padding: 18px 15px;
+    text-align: left;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+#tabela td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.9rem;
+}
+
+/* Efeito de zebra (linhas alternadas) */
+#tabela tbody tr:nth-child(even) {
+    background-color: #f9fdf9;
+}
+
+/* Hover na linha */
+#tabela tbody tr:hover {
+    background-color: #f1f8e9;
+    transition: background 0.2s ease;
+}
+
+/* Estilização de Mensagens */
+.mensagem {
+    padding: 15px 25px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.erro {
+    background-color: #ffebee;
+    color: #c62828;
+    border-left: 5px solid #c62828;
+}

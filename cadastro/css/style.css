@@ -1,0 +1,160 @@
+/* Definição de Variáveis para facilitar o uso das cores */
+:root {
+    --branco: #ffffff;
+    --verde-claro: #e8f5e9;
+    --verde-medio: #4caf50;
+    --verde-escuro: #1b5e20;
+    --sombra: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--verde-claro);
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1 {
+    color: var(--verde-escuro);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+/* Navegação */
+nav {
+    background-color: var(--verde-escuro);
+    width: 100%;
+    max-width: 800px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    box-shadow: var(--sombra);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0;
+    margin: 0;
+}
+
+nav ul li a {
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav ul li a:hover {
+    color: #a5d6a7;
+}
+
+/* Formulários e Fieldset */
+fieldset {
+    border: none;
+    background-color: var(--branco);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--sombra);
+    width: 100%;
+    max-width: 600px;
+}
+
+form div {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--verde-escuro);
+}
+
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box; /* Garante que o padding não estoure a largura */
+    transition: border-color 0.3s;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--verde-medio);
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
+}
+
+/* Botões */
+input[type="submit"] {
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100%;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+input[type="submit"]:hover {
+    background-color: var(--verde-medio);
+    transform: translateY(-2px);
+}
+
+/* Tabela de Consulta */
+#tabela {
+    width: 100%;
+    max-width: 1000px;
+    border-collapse: collapse;
+    background-color: var(--branco);
+    border-radius: 8px;
+    overflow: hidden; /* Para as bordas arredondadas funcionarem na tabela */
+    box-shadow: var(--sombra);
+    margin-top: 20px;
+}
+
+#tabela th {
+    background-color: var(--verde-escuro);
+    color: var(--branco);
+    padding: 15px;
+    text-align: left;
+}
+
+#tabela td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #eee;
+}
+
+#tabela tr:hover {
+    background-color: #f1f8e9;
+}
+
+/* Mensagens de Sucesso/Erro */
+.mensagem {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 6px;
+    font-weight: bold;
+}
+
+.sucesso {
+    background-color: #c8e6c9;
+    color: #2e7d32;
+}
+
+.erro {
+    background-color: #ffcdd2;
+    color: #c62828;
+}

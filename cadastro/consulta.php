@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Consulta</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/tabConsul.css">
 </head>
 
 <body>
@@ -20,7 +20,7 @@
     </nav>
 
 
-    <h1>Consulta</h1>
+
     <?php
     include "conectar.php";
 

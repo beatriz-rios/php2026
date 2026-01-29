@@ -14,6 +14,8 @@
             <li><a href="alteracao.php">Alterar</a></li>
             <li><a href="consulta.php">Consultar</a></li>
             <li><a href="exclusao.php">Excluir</a></li>
+            <li><a href="pedidos.php">Pedidos</a></li>
+            <li><a href="pedidosConsult.php">Consulta de Pedidos</a></li>
         </ul>
     </nav>
 
